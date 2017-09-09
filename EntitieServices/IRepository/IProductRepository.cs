@@ -10,7 +10,7 @@ namespace EntitieServices.IRepository
 {
    public interface IProductRepository : IDisposable
     {
-        IEnumerable SelectAll();
+        IEnumerable<Product> SelectAll();
         Product Select(int? id);
     }
 }

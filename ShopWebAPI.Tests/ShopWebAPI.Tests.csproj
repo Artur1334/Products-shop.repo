@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DDC5FDA3-30A7-4722-B665-E7C08892ABDC}</ProjectGuid>
+    <ProjectGuid>{F2A7914C-084C-4D93-8FD1-B3EFD2B5302A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShopWebAPI.Tests</RootNamespace>
@@ -93,7 +93,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
-    <Compile Include="Controllers\ValuesControllerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -103,7 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShopWebAPI\ShopWebAPI.csproj">
-      <Project>{3EFD9307-5868-4C1E-8504-A6328A66E77E}</Project>
+      <Project>{0980A779-15A2-40C2-9F47-07A89650ECE8}</Project>
       <Name>ShopWebAPI</Name>
     </ProjectReference>
   </ItemGroup>

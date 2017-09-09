@@ -9,14 +9,14 @@ using System.Collections;
 
 namespace Repository
 {
-    class ProductRepository : IProductRepository
+   public class ProductRepository : IProductRepository
     {
-        private ProductShopModel DbEntitiesContext;
+        private readonly  ProductShopModel DbEntitiesContext;
         public ProductRepository()
         {
             this.DbEntitiesContext = new ProductShopModel();
         }
-        public IEnumerable SelectAll()
+        public IEnumerable<Product> SelectAll()
         {
             return DbEntitiesContext.Products.ToList();
         }

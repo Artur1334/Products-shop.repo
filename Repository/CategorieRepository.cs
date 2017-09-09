@@ -13,12 +13,12 @@ namespace Repository
 {
   public  class CategorieRepository : ICategorieRepository
     {
-        private ProductShopModel DbEntitiesContext;
-
+        private readonly ProductShopModel DbEntitiesContext;
+        
         public CategorieRepository()
         {
             this.DbEntitiesContext = new ProductShopModel();
-          
+            
 
         }
         public Category Select(int? id)
@@ -26,7 +26,7 @@ namespace Repository
             return DbEntitiesContext.Categories.Find(id);
         }
 
-        public IEnumerable SelectAll()
+        public IEnumerable<Category> SelectAll()
         {
             return DbEntitiesContext.Categories.ToList();
         }

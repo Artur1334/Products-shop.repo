@@ -10,7 +10,7 @@ namespace EntitieServices.IRepository
 {
  public interface ICategorieRepository : IDisposable
     {
-        IEnumerable SelectAll();
+        IEnumerable<Category> SelectAll();
         Category Select(int? id);
     }
 }
