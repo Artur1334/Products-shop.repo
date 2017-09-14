@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Repository
 {
-    class PaymentRepository: IPaymentRepository
+   public class PaymentRepository: IPaymentRepository
     {
         private ProductShopModel DbEntitiesContext;
         public PaymentRepository()

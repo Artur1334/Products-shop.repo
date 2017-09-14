@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Myorder";
+}
+@using ProductShop.ItemClass;
+
+<h2>Myorder</h2>
+<h3>@ViewBag.Message</h3>
+
+    <table class="table">
+        <tr>
+            <th>IMG</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Description</th>
+            <th>Sub Total</th>
+        </tr>
+         
+        @foreach (Item it in (List<Item>)Session["cart"])
+        {
+            <tr>
+                <td>
+                    <img src="~/Content/Images/@it.Product.imgpath" />
+                </td>
+                <td>
+                    @it.Product.ProductName
+                </td>
+                <td>
+                    @ViewBag.listcategorie[it.Product.Categorie].Name
+                </td>
+                <td>
+                    @it.Product.Price
+                </td>
+                <td>
+                    <input id="myInput" type="number" value="@it.Quantity" placeholder="multiple of 1" step="1" min="1" max="@it.Product.Quantity"  />
+                </td>
+                <td>
+                    @it.Product.ProductDescription
+                </td>
+                <td>
+                    @(it.Product.Price * it.Quantity)
+                </td>
+                <td>
+                    <button id="btn_delete" class="label  label-info" data-slno="@it.Product.ProductID " onclick="location.href='@Url.Action("Remove", "Cart", it.Product)'">
+                        <img src="~/Content/Images/627249-delete3-256.png" />
+                    </button>
+                </td>
+            </tr>
+        }
+    </table>
+<a id="btn_add" href="@Url.Action("ChakQuantity", "Cart",(List<Item>)Session["cart"])" class="btn  btn-info btn-lg">Buy Now</a>
+
+

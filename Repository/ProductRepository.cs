@@ -25,6 +25,10 @@ namespace Repository
         {
             return DbEntitiesContext.Products.Find(id);
         }
+        public void Save()
+        {
+            DbEntitiesContext.SaveChanges();
+        }
 
         #region IDisposable Support
         private bool disposedValue = false;

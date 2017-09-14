@@ -8,7 +8,7 @@ using EntitieServices.EntitiProductShop;
 
 namespace Repository
 {
-    class OrderRepository : IOrderRepository
+   public class OrderRepository : IOrderRepository
     {
         private ProductShopModel DbEntitiesContext;
         public OrderRepository()

@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+
+}
+<div class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".main-nav">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse main-nav">
+            <ul class="nav navbar-nav">
+                <li><a href="@Url.Action("SearchByCatigory","products", new { id = 1 })"> @ViewBag.listcategorie[0].Name</a></li>
+               
+                <li><a href="@Url.Action("SearchByCatigory","products", new { id = 2 })">@ViewBag.listcategorie[1].Name</a></li>
+                
+                <li><a href="@Url.Action("SearchByCatigory","products", new { id = 3 })">@ViewBag.listcategorie[2].Name</a></li>
+                
+                <li><a href="@Url.Action("SearchByCatigory","products", new { id = 4 })">@ViewBag.listcategorie[3].Name</a></li>
+                
+                <li><a href="@Url.Action("SearchByCatigory","products", new { id = 5 })">@ViewBag.listcategorie[4].Name</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>IMG</th>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Description</th>
+    </tr>
+
+    @foreach (var product in ViewBag.listProduct)
+    {  
+        <tr>
+            <td><img src="~/Content/Images/@product.imgpath" /></td>
+            <td>@product.ProductName</td>
+            <td>@ViewBag.listcategorie[product.Categorie-1].Name</td>
+            <td>@product.Price</td>
+            <td>@product.ProductDescription</td>
+            <td><a id="btn_add" href="@Url.Action("Add", "Cart",product)" class="btn btn-info btn-lg" >
+                 <span class="glyphicon glyphicon-shopping-cart"></span> Add To Cart</a></td>       
+       </tr>
+    }
+</table>

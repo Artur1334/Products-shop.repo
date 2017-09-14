@@ -12,5 +12,6 @@ namespace EntitieServices.IRepository
     {
         IEnumerable<Product> SelectAll();
         Product Select(int? id);
+        void Save();
     }
 }
